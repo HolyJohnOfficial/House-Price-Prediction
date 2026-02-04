@@ -15,7 +15,7 @@ from geopy.geocoders import Nominatim
 
 
 #Load trained model
-rf_model = joblib.load("rf_model.pkl") #Loading pre-trained model
+rfmodel = joblib.load("rf_model.pkl") #Loading pre-trained model
 
 
 #Title
@@ -56,7 +56,7 @@ except Exception as e:
 
 if st.button("Predict"):
     features = np.array([[income, lat, long]])
-    prediction = rf_model.predict(features)
+    prediction = rfmodel.predict(features)
     prediction *= 100000
     lower_range = prediction[0] - rmse
     upper_range = prediction[0] + rmse
@@ -64,4 +64,5 @@ if st.button("Predict"):
     
 
     
+
 
