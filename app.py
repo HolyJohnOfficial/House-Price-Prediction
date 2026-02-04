@@ -15,7 +15,7 @@ from geopy.geocoders import Nominatim
 
 
 #Load trained model
-rf_model = joblib.load("final_rf_model.pkl") #Loading pre-trained model
+rf_model = joblib.load("rf_model.pkl") #Loading pre-trained model
 
 
 #Title
@@ -62,4 +62,5 @@ if st.button("Predict"):
     upper_range = prediction[0] + rmse
     st.success(f"Estimated Predicted House Price $: {lower_range:,.2f} - {upper_range:,.2f}")
     
+
     
